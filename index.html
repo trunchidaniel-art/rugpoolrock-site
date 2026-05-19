@@ -12,12 +12,21 @@
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      color: #fff7d6;
+      font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
+      color: #f4df9b;
       background:
-        linear-gradient(rgba(6, 0, 15, 0.65), rgba(0, 0, 0, 0.92)),
-        url("https://i.imgur.com/nBMqHRD.jpeg") center/cover no-repeat fixed;
+        linear-gradient(rgba(8, 0, 18, 0.45), rgba(0, 0, 0, 0.9)),
+        url("https://i.postimg.cc/KvTnCDgC/p2222fun.png") center/cover no-repeat fixed;
       overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at top, rgba(184, 91, 255, 0.3), transparent 45%);
+      pointer-events: none;
+      z-index: 0;
     }
 
     .rock {
@@ -27,11 +36,13 @@
       z-index: 1;
       animation: float 7s ease-in-out infinite;
       pointer-events: none;
+      filter: drop-shadow(0 0 12px #a855f7);
     }
 
     .r1 { top: 18%; left: 8%; }
     .r2 { top: 55%; right: 10%; animation-delay: 2s; }
     .r3 { bottom: 12%; left: 45%; animation-delay: 4s; }
+    .r4 { top: 35%; right: 25%; animation-delay: 1s; font-size: 30px; }
 
     @keyframes float {
       0%, 100% { transform: translateY(0) rotate(0deg); }
@@ -48,29 +59,39 @@
     }
 
     .logo {
-      width: 210px;
-      height: 210px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid #b66cff;
-      box-shadow: 0 0 45px #8a2be2;
+      border: 3px solid #d8b25c;
+      box-shadow: 0 0 50px #8a2be2, 0 0 18px #f5c85b;
       margin-bottom: 25px;
     }
 
-    h1 {
-      font-size: clamp(48px, 9vw, 96px);
-      margin: 0;
+    h1, h2, h3 {
+      letter-spacing: 1.5px;
       color: #d8b25c;
-      text-shadow: 0 0 25px #6b21a8;
-      letter-spacing: 1px;
+      text-shadow:
+        2px 2px 0 #3a2a1a,
+        4px 4px 0 #12091f,
+        0 0 18px #9f5cff;
+    }
+
+    h1 {
+      font-size: clamp(52px, 10vw, 108px);
+      margin: 0;
+      line-height: 0.95;
     }
 
     .tagline {
-      max-width: 850px;
-      margin: 20px auto 35px;
+      max-width: 900px;
+      margin: 22px auto 35px;
       font-size: clamp(20px, 3vw, 30px);
-      color: #e8d9ff;
+      color: #f3e8ff;
       line-height: 1.4;
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      text-shadow: 0 0 18px #000;
     }
 
     .buttons {
@@ -83,12 +104,13 @@
 
     .btn {
       padding: 16px 24px;
-      border-radius: 14px;
+      border-radius: 16px;
       text-decoration: none;
-      color: #12091f;
+      color: #16091f;
       background: linear-gradient(135deg, #f5c85b, #b66cff);
-      font-weight: 800;
-      box-shadow: 0 0 25px rgba(182,108,255,0.45);
+      font-weight: 900;
+      font-family: Arial, sans-serif;
+      box-shadow: 0 0 25px rgba(182,108,255,0.5);
       transition: 0.2s;
     }
 
@@ -98,35 +120,35 @@
 
     .btn.dark {
       color: #fff7d6;
-      background: rgba(20, 10, 35, 0.75);
-      border: 1px solid #b66cff;
+      background: rgba(20, 10, 35, 0.82);
+      border: 1px solid #d8b25c;
     }
 
     .card {
-      max-width: 950px;
-      margin: 22px auto;
-      padding: 30px;
-      border-radius: 24px;
-      background: rgba(10, 5, 20, 0.72);
-      border: 1px solid rgba(214,178,92,0.35);
-      box-shadow: 0 0 35px rgba(0,0,0,0.45);
+      max-width: 980px;
+      margin: 24px auto;
+      padding: 32px;
+      border-radius: 26px;
+      background: rgba(10, 5, 20, 0.78);
+      border: 1px solid rgba(216,178,92,0.45);
+      box-shadow: 0 0 40px rgba(0,0,0,0.55);
       text-align: left;
     }
 
     .card h2 {
-      color: #d8b25c;
-      font-size: 34px;
+      font-size: 36px;
       margin-top: 0;
     }
 
     .card p, .card li {
       color: #efe4ff;
+      font-family: Arial, sans-serif;
       font-size: 18px;
       line-height: 1.7;
     }
 
     .grid {
-      max-width: 950px;
+      max-width: 980px;
       margin: 30px auto;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -135,32 +157,66 @@
 
     .mini {
       padding: 24px;
-      border-radius: 20px;
-      background: rgba(15, 8, 30, 0.78);
-      border: 1px solid rgba(182,108,255,0.35);
+      border-radius: 22px;
+      background: rgba(15, 8, 30, 0.82);
+      border: 1px solid rgba(182,108,255,0.4);
+      box-shadow: 0 0 24px rgba(0,0,0,0.4);
     }
 
     .mini h3 {
       margin-top: 0;
-      color: #f5c85b;
+      font-size: 24px;
+    }
+
+    .plan-img {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 24px;
+      border: 2px solid rgba(216,178,92,0.55);
+      box-shadow: 0 0 35px rgba(182,108,255,0.35);
+      display: block;
+      margin: 20px auto 0;
     }
 
     code {
       word-break: break-all;
-      color: #d8b25c;
+      color: #f5c85b;
       font-size: 15px;
+      font-family: monospace;
     }
 
     footer {
       margin-top: 60px;
-      color: #bba7d6;
+      color: #d7c4ff;
       font-size: 15px;
       text-align: center;
+      font-family: Arial, sans-serif;
     }
 
     .warning {
       color: #ffdddd !important;
       font-size: 15px !important;
+    }
+
+    @media (max-width: 600px) {
+      .logo {
+        width: 170px;
+        height: 170px;
+      }
+
+      .card {
+        padding: 22px;
+      }
+
+      .buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 320px;
+      }
     }
   </style>
 </head>
@@ -169,9 +225,10 @@
   <div class="rock r1">🪨</div>
   <div class="rock r2">🪨</div>
   <div class="rock r3">🪨</div>
+  <div class="rock r4">🪨</div>
 
   <main class="page">
-    <img class="logo" src="https://i.imgur.com/nBMqHRD.jpeg" alt="RugPoolRock Logo" />
+    <img class="logo" src="https://i.postimg.cc/hjCrP4Sr/p11111.png" alt="RugPoolRock Logo" />
 
     <h1>RugPoolRock</h1>
 
@@ -214,6 +271,14 @@
         <h3>📉 Emotional Damage</h3>
         <p>The charts may shake. The rock remains calm.</p>
       </div>
+    </section>
+
+    <section class="card">
+      <h2>The Plan</h2>
+      <p>
+        Build the community, grow the lore, expand the temple and turn RPR into a legendary internet rock.
+      </p>
+      <img class="plan-img" src="https://i.postimg.cc/Qd1rzCsV/p333p2.png" alt="RugPoolRock Plan" />
     </section>
 
     <section class="card">
