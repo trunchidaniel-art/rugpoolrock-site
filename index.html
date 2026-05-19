@@ -3,114 +3,236 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RugPoolRock</title>
+  <title>RugPoolRock | $RPR</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      background: linear-gradient(to bottom, #12091f, #000000);
-      color: white;
       font-family: Arial, sans-serif;
-      text-align: center;
+      color: #fff7d6;
+      background:
+        linear-gradient(rgba(6, 0, 15, 0.65), rgba(0, 0, 0, 0.92)),
+        url("https://i.imgur.com/nBMqHRD.jpeg") center/cover no-repeat fixed;
       overflow-x: hidden;
     }
 
-    .container {
-      padding: 80px 20px;
+    .rock {
+      position: fixed;
+      font-size: 42px;
+      opacity: 0.18;
+      z-index: 1;
+      animation: float 7s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .r1 { top: 18%; left: 8%; }
+    .r2 { top: 55%; right: 10%; animation-delay: 2s; }
+    .r3 { bottom: 12%; left: 45%; animation-delay: 4s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-22px) rotate(7deg); }
+    }
+
+    .page {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+      padding: 70px 20px;
+      text-align: center;
+      backdrop-filter: blur(1px);
     }
 
     .logo {
-      width: 220px;
+      width: 210px;
+      height: 210px;
       border-radius: 50%;
-      box-shadow: 0 0 40px purple;
-      margin-bottom: 30px;
+      object-fit: cover;
+      border: 2px solid #b66cff;
+      box-shadow: 0 0 45px #8a2be2;
+      margin-bottom: 25px;
     }
 
     h1 {
-      font-size: 70px;
-      margin-bottom: 10px;
+      font-size: clamp(48px, 9vw, 96px);
+      margin: 0;
+      color: #d8b25c;
+      text-shadow: 0 0 25px #6b21a8;
+      letter-spacing: 1px;
     }
 
-    .subtitle {
-      font-size: 22px;
-      color: #c9b3ff;
-      max-width: 700px;
-      margin: auto;
-      margin-bottom: 40px;
+    .tagline {
+      max-width: 850px;
+      margin: 20px auto 35px;
+      font-size: clamp(20px, 3vw, 30px);
+      color: #e8d9ff;
+      line-height: 1.4;
     }
 
-    .button {
-      display: inline-block;
-      padding: 18px 35px;
-      background: purple;
-      color: white;
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 30px 0 55px;
+    }
+
+    .btn {
+      padding: 16px 24px;
+      border-radius: 14px;
       text-decoration: none;
-      border-radius: 15px;
-      font-size: 20px;
-      transition: 0.3s;
+      color: #12091f;
+      background: linear-gradient(135deg, #f5c85b, #b66cff);
+      font-weight: 800;
+      box-shadow: 0 0 25px rgba(182,108,255,0.45);
+      transition: 0.2s;
     }
 
-    .button:hover {
-      background: #b14cff;
-      transform: scale(1.05);
+    .btn:hover {
+      transform: translateY(-3px) scale(1.03);
     }
 
-    .lore {
-      margin-top: 80px;
-      font-size: 20px;
-      color: #d7d7d7;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+    .btn.dark {
+      color: #fff7d6;
+      background: rgba(20, 10, 35, 0.75);
+      border: 1px solid #b66cff;
+    }
+
+    .card {
+      max-width: 950px;
+      margin: 22px auto;
+      padding: 30px;
+      border-radius: 24px;
+      background: rgba(10, 5, 20, 0.72);
+      border: 1px solid rgba(214,178,92,0.35);
+      box-shadow: 0 0 35px rgba(0,0,0,0.45);
+      text-align: left;
+    }
+
+    .card h2 {
+      color: #d8b25c;
+      font-size: 34px;
+      margin-top: 0;
+    }
+
+    .card p, .card li {
+      color: #efe4ff;
+      font-size: 18px;
       line-height: 1.7;
     }
 
-    .footer {
-      margin-top: 100px;
-      padding-bottom: 50px;
-      color: #888;
-      font-size: 16px;
+    .grid {
+      max-width: 950px;
+      margin: 30px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .mini {
+      padding: 24px;
+      border-radius: 20px;
+      background: rgba(15, 8, 30, 0.78);
+      border: 1px solid rgba(182,108,255,0.35);
+    }
+
+    .mini h3 {
+      margin-top: 0;
+      color: #f5c85b;
+    }
+
+    code {
+      word-break: break-all;
+      color: #d8b25c;
+      font-size: 15px;
+    }
+
+    footer {
+      margin-top: 60px;
+      color: #bba7d6;
+      font-size: 15px;
+      text-align: center;
+    }
+
+    .warning {
+      color: #ffdddd !important;
+      font-size: 15px !important;
     }
   </style>
 </head>
 
 <body>
+  <div class="rock r1">🪨</div>
+  <div class="rock r2">🪨</div>
+  <div class="rock r3">🪨</div>
 
-  <div class="container">
+  <main class="page">
+    <img class="logo" src="https://i.imgur.com/nBMqHRD.jpeg" alt="RugPoolRock Logo" />
 
-    <img class="logo" src="https://imgur.com/a/nBMqHRD" alt="RPR Logo">
+    <h1>RugPoolRock</h1>
 
-    <h1>🪨 RugPoolRock</h1>
-
-    <div class="subtitle">
+    <p class="tagline">
       The leading geological asset of decentralized emotional damage.
+    </p>
+
+    <div class="buttons">
+      <a class="btn" href="https://pump.fun/coin/FsBEiFhUCf22d2dYydfWuJvtQjqZMeittDSBAh8Xpump" target="_blank">Trade $RPR</a>
+      <a class="btn dark" href="https://t.me/RugPoolRock" target="_blank">Join the Temple</a>
+      <a class="btn dark" href="https://x.com/AncientRPR" target="_blank">Follow on X</a>
     </div>
 
-    <a class="button" href="https://t.me/RugPoolRock" target="_blank">
-      Join the Temple 🏛️
-    </a>
-
-    <div class="lore">
+    <section class="card">
+      <h2>The Ancient Rug Prophecy</h2>
       <p>
-        Born from rugs. Powered by memes.
-        Sustained by emotional damage.
+        Born from rugs. Powered by memes. Sustained by emotional resilience.
       </p>
-
       <p>
-        Still just a rock trying to become a legendary rock 🪨
+        RugPoolRock is a meme/community experiment built around internet culture,
+        lore, humor and the strange emotional journey of surviving crypto chaos together.
       </p>
-
       <p>
-        No fake promises. No artificial hype.
-        Just survivors building the temple one stone at a time.
+        No fake promises. No artificial hype. Just one rock, one temple and a growing community.
       </p>
-    </div>
+    </section>
 
-    <div class="footer">
-      $RPR • Ancient Emotional Damage Temple
-    </div>
+    <section class="grid">
+      <div class="mini">
+        <h3>🪨 Community First</h3>
+        <p>We build the temple one stone at a time.</p>
+      </div>
 
-  </div>
+      <div class="mini">
+        <h3>📜 Lore & Memes</h3>
+        <p>Every meme becomes part of the ancient archive.</p>
+      </div>
 
+      <div class="mini">
+        <h3>📉 Emotional Damage</h3>
+        <p>The charts may shake. The rock remains calm.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Official Links</h2>
+      <p><strong>Contract Address:</strong></p>
+      <p><code>FsBEiFhUCf22d2dYydfWuJvtQjqZMeittDSBAh8Xpump</code></p>
+
+      <p><strong>Telegram Temple:</strong> t.me/RugPoolRock</p>
+      <p><strong>X:</strong> x.com/AncientRPR</p>
+
+      <p class="warning">
+        Always verify links through official channels only. Admins will never DM first.
+      </p>
+    </section>
+
+    <footer>
+      $RPR • Entertainment • Community • Digital Experiment<br />
+      Not financial advice. Just an ancient emotional support rock.
+    </footer>
+  </main>
 </body>
 </html>
